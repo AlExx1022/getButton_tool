@@ -17,7 +17,7 @@
 ### 步驟 1：複製貼上這行程式碼
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.min.js"></script>
 ```
 
 ### 步驟 2：完成！
@@ -45,7 +45,7 @@
     </script>
   
     <!-- 2. 引入 getButton -->
-    <script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.min.js"></script>
 </body>
 </html>
 ```
@@ -58,7 +58,7 @@
 
 ```html
 <!-- 只要這一行，立即擁有 Line 按鈕！ -->
-<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.min.js"></script>
 ```
 
 自訂 Line 設定：
@@ -72,7 +72,7 @@
         headerColor: '#00c300'                        // 彈窗標題顏色
     };
 </script>
-<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.min.js"></script>
 ```
 
 ### 🔴 電話按鈕
@@ -86,7 +86,7 @@
         headerColor: '#e74c3c'                  // 紅色標題
     };
 </script>
-<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.min.js"></script>
 ```
 
 ### 🎯 多按鈕（Line + 電話）
@@ -107,7 +107,7 @@
         }
     ];
 </script>
-<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.min.js"></script>
 ```
 
 ## ⚙️ 完整配置選項
@@ -161,22 +161,28 @@ window.getButtonConfig = {
 
 ## 🔗 CDN 網址說明
 
-### 主要網址（推薦）
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
-```
-
-### 壓縮版本（更快載入）
+### 🚀 壓縮版本（推薦）
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.min.js"></script>
 ```
 
-### 指定版本（穩定性）
+### 📝 標準版本（含註釋）
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@v1.0.0/src/core/getButton.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.js"></script>
+```
+
+### 🔧 開發版本（原始碼）
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
+```
+
+### 📌 指定版本（穩定性）
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@v1.0.0/dist/getButton.min.js"></script>
 ```
 
 ## 💡 使用技巧

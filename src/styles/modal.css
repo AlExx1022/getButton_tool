@@ -1,0 +1,103 @@
+.getbutton-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.getbutton-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.getbutton-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 320px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.getbutton-overlay.show .getbutton-modal {
+  transform: scale(1) translateY(0);
+}
+
+.getbutton-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.getbutton-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #00B900;
+  margin: 0;
+}
+
+.getbutton-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+  color: #6c757d;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.getbutton-close:hover {
+  background: #f8f9fa;
+}
+
+.getbutton-qr-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.getbutton-qr-image {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.getbutton-url {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+  color: #6c757d;
+  word-break: break-all;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.getbutton-line-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getButton - 電話按鈕測試</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin: 0 0 20px 0;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            color: #6c757d;
+            margin: 0;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .demo-card {
+            padding: 30px;
+            border: 2px solid #e9ecef;
+            border-radius: 16px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .demo-card h3 {
+            margin-top: 0;
+            color: #e74c3c;
+        }
+        
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 12px;
+            margin: 15px 0;
+            text-align: left;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .instructions h3 {
+            color: #d68910;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>📞 電話按鈕</h1>
+            <p>getButton 電話功能測試</p>
+        </div>
+
+        <div class="instructions">
+            <h3>📱 測試說明</h3>
+            <p>• 右下角會出現紅色圓形電話按鈕</p>
+            <p>• 點擊按鈕會直接撥打電話號碼</p>
+            <p>• 在手機上會開啟撥號程式</p>
+            <p>• 在桌面上會嘗試開啟預設的通話應用程式</p>
+        </div>
+
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3>電話按鈕設定</h3>
+                <div class="code-example">
+window.getButtonConfig = {
+  type: 'phone',
+  phoneNumber: '+886912345678',
+  buttonColor: '#e74c3c',
+  position: 'fixed'
+};
+                </div>
+                <p>設定類型為 'phone' 即可啟用電話功能</p>
+            </div>
+
+            <div class="demo-card">
+                <h3>自訂設定選項</h3>
+                <div class="code-example">
+{
+  type: 'phone',           // 按鈕類型
+  phoneNumber: '電話號碼',  // 要撥打的號碼
+  buttonColor: '按鈕顏色', // 按鈕背景色
+  buttonText: '按鈕文字',  // 可選，預設為 'Phone'
+  position: 'fixed'       // 位置模式
+}
+                </div>
+                <p>支援國際號碼格式，建議加上國碼</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <p style="color: #6c757d;">測試電話功能：點擊右下角的紅色電話按鈕 👆</p>
+        </div>
+    </div>
+
+    <!-- getButton 電話設定 -->
+    <script>
+        window.getButtonConfig = {
+            type: 'phone',
+            phoneNumber: '+886912345678',
+            buttonColor: '#e74c3c',  // 紅色
+            position: 'fixed'
+        };
+    </script>
+    <script src="../src/core/getButton.js"></script>
+</body>
+</html>

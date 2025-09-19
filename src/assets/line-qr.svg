@@ -1,0 +1,67 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="white"/>
+  
+  <!-- QR Code pattern simulation -->
+  <g fill="black">
+    <!-- Top-left finder pattern -->
+    <rect x="10" y="10" width="60" height="60"/>
+    <rect x="20" y="20" width="40" height="40" fill="white"/>
+    <rect x="30" y="30" width="20" height="20"/>
+    
+    <!-- Top-right finder pattern -->
+    <rect x="130" y="10" width="60" height="60"/>
+    <rect x="140" y="20" width="40" height="40" fill="white"/>
+    <rect x="150" y="30" width="20" height="20"/>
+    
+    <!-- Bottom-left finder pattern -->
+    <rect x="10" y="130" width="60" height="60"/>
+    <rect x="20" y="140" width="40" height="40" fill="white"/>
+    <rect x="30" y="150" width="20" height="20"/>
+    
+    <!-- Data modules (simplified pattern) -->
+    <rect x="80" y="20" width="10" height="10"/>
+    <rect x="100" y="20" width="10" height="10"/>
+    <rect x="80" y="40" width="10" height="10"/>
+    <rect x="100" y="40" width="10" height="10"/>
+    <rect x="80" y="60" width="10" height="10"/>
+    <rect x="100" y="60" width="10" height="10"/>
+    
+    <rect x="20" y="80" width="10" height="10"/>
+    <rect x="40" y="80" width="10" height="10"/>
+    <rect x="60" y="80" width="10" height="10"/>
+    <rect x="80" y="80" width="10" height="10"/>
+    <rect x="100" y="80" width="10" height="10"/>
+    <rect x="120" y="80" width="10" height="10"/>
+    <rect x="140" y="80" width="10" height="10"/>
+    <rect x="160" y="80" width="10" height="10"/>
+    
+    <rect x="20" y="100" width="10" height="10"/>
+    <rect x="40" y="100" width="10" height="10"/>
+    <rect x="80" y="100" width="10" height="10"/>
+    <rect x="120" y="100" width="10" height="10"/>
+    <rect x="160" y="100" width="10" height="10"/>
+    
+    <rect x="80" y="120" width="10" height="10"/>
+    <rect x="100" y="120" width="10" height="10"/>
+    <rect x="120" y="120" width="10" height="10"/>
+    <rect x="140" y="120" width="10" height="10"/>
+    <rect x="160" y="120" width="10" height="10"/>
+    
+    <rect x="80" y="140" width="10" height="10"/>
+    <rect x="120" y="140" width="10" height="10"/>
+    <rect x="140" y="140" width="10" height="10"/>
+    
+    <rect x="80" y="160" width="10" height="10"/>
+    <rect x="100" y="160" width="10" height="10"/>
+    <rect x="140" y="160" width="10" height="10"/>
+    <rect x="160" y="160" width="10" height="10"/>
+    
+    <rect x="80" y="180" width="10" height="10"/>
+    <rect x="120" y="180" width="10" height="10"/>
+    <rect x="160" y="180" width="10" height="10"/>
+  </g>
+  
+  <!-- Line logo in center -->
+  <circle cx="100" cy="100" r="15" fill="white"/>
+  <text x="100" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#00B900">LINE</text>
+</svg>

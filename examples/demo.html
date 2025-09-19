@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getButton - 右下角浮動按鈕演示</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 100px; /* 給底部按鈕留空間 */
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            background: linear-gradient(135deg, #00c300, #00a000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            color: #6c757d;
+            margin: 20px 0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 16px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #00c300;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            color: #00c300;
+            margin: 0 0 15px 0;
+        }
+        
+        .demo-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: #e8f5e8;
+            border-radius: 16px;
+            border: 2px solid #00c300;
+        }
+        
+        .demo-section h3 {
+            color: #00c300;
+            margin-top: 0;
+        }
+        
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+        }
+        
+        .inline-demo {
+            padding: 20px;
+            border: 2px dashed #00c300;
+            border-radius: 12px;
+            background: #f0f8f0;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .settings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .settings-table th,
+        .settings-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .settings-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .settings-table code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .scroll-content {
+            height: 200vh;
+            background: linear-gradient(to bottom, transparent, rgba(0,195,0,0.1));
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🚀 getButton</h1>
+            <p>輕量級 Line QR Code 浮動按鈕</p>
+            <p>現在預設會顯示在右下角，就像你在圖片中看到的那樣！</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>右下角浮動</h3>
+                <p>預設固定在右下角，不會干擾頁面內容</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>全新設計</h3>
+                <p>使用官方 Line 圖標，更美觀的圓角設計</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">⚙️</div>
+                <p>可自訂位置、主題和樣式</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>即插即用</h3>
+                <p>一行程式碼即可使用，無需額外設定</p>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>💡 基本使用</h3>
+            <p>只需要引入腳本，按鈕會自動出現在右下角：</p>
+            
+            <div class="code-example">
+&lt;!-- 引入腳本 --&gt;
+&lt;script src="getButton.js"&gt;&lt;/script&gt;
+
+&lt;!-- 就這樣！按鈕會自動出現在右下角 --&gt;
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>🎛️ 自訂設定</h3>
+            <p>可以透過設定來自訂按鈕的行為：</p>
+            
+            <div class="code-example">
+&lt;script&gt;
+// 自訂設定
+window.getButtonConfig = {
+  qrCodeImage: './my-qr-code.png',
+  lineUrl: 'https://lin.ee/your-line-id',
+  buttonText: 'Line 聯絡我們',
+  theme: 'white',
+  position: 'fixed',  // 固定位置模式
+  bottom: '20px',     // 距離底部 20px
+  right: '20px'       // 距離右邊 20px
+};
+&lt;/script&gt;
+&lt;script src="getButton.js"&gt;&lt;/script&gt;
+            </div>
+
+            <h4>設定選項：</h4>
+            <table class="settings-table">
+                <thead>
+                    <tr>
+                        <th>選項</th>
+                        <th>類型</th>
+                        <th>預設值</th>
+                        <th>說明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>position</code></td>
+                        <td>string</td>
+                        <td><code>'fixed'</code></td>
+                        <td>位置模式：<code>'fixed'</code> 或 <code>'inline'</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>bottom</code></td>
+                        <td>string</td>
+                        <td><code>'20px'</code></td>
+                        <td>距離底部的距離（fixed 模式）</td>
+                    </tr>
+                    <tr>
+                        <td><code>right</code></td>
+                        <td>string</td>
+                        <td><code>'20px'</code></td>
+                        <td>距離右邊的距離（fixed 模式）</td>
+                    </tr>
+                    <tr>
+                        <td><code>theme</code></td>
+                        <td>string</td>
+                        <td><code>'green'</code></td>
+                        <td>主題：<code>'green'</code> 或 <code>'white'</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>buttonText</code></td>
+                        <td>string</td>
+                        <td><code>'Line'</code></td>
+                        <td>按鈕顯示文字</td>
+                    </tr>
+                    <tr>
+                        <td><code>qrCodeImage</code></td>
+                        <td>string</td>
+                        <td><code>'./src/assets/line-qr.svg'</code></td>
+                        <td>QR Code 圖片路徑</td>
+                    </tr>
+                    <tr>
+                        <td><code>lineUrl</code></td>
+                        <td>string</td>
+                        <td><code>'https://lin.ee/mk5SfVU'</code></td>
+                        <td>Line 連結網址</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="demo-section">
+            <h3>📋 內聯模式演示</h3>
+            <p>如果你想要按鈕顯示在特定位置而不是浮動，可以使用內聯模式：</p>
+            
+            <div class="code-example">
+&lt;script&gt;
+window.getButtonConfig = {
+  position: 'inline'  // 內聯模式
+};
+&lt;/script&gt;
+&lt;script src="getButton.js"&gt;&lt;/script&gt;
+&lt;div id="line-button"&gt;&lt;/div&gt;
+            </div>
+            
+            <div class="inline-demo">
+                <p>內聯按鈕會顯示在這裡：</p>
+                <div id="line-button"></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <p style="color: #6c757d;">向下滾動看看右下角的浮動按鈕效果 👇</p>
+        </div>
+    </div>
+
+    <div class="scroll-content">
+        <div style="text-align: center; padding: 100px 20px;">
+            <h2 style="color: #00c300;">滾動測試區域</h2>
+            <p style="color: #666;">注意右下角的按鈕會一直保持固定位置</p>
+            <p style="color: #666;">這就是浮動按鈕的魅力所在！</p>
+        </div>
+    </div>
+
+    <!-- 固定位置的按鈕（預設） -->
+    <script>
+        // 預設設定：固定在右下角
+        window.getButtonConfig = {
+            qrCodeImage: '../src/assets/line-qr.png',
+            lineUrl: 'https://lin.ee/mk5SfVU',
+            buttonText: 'Line',
+            theme: 'green',
+            position: 'fixed'
+        };
+    </script>
+    <script src="../src/core/getButton.js"></script>
+
+    <!-- 內聯按鈕 -->
+    <script>
+        // 為內聯演示建立按鈕
+        setTimeout(() => {
+            const inlineTarget = document.getElementById('line-button');
+            if (inlineTarget) {
+                const container = document.createElement('div');
+                container.className = 'getbutton-container inline';
+                
+                const button = document.createElement('button');
+                button.className = 'getbutton-btn';
+                button.innerHTML = `
+                    <svg class="getbutton-icon" viewBox="0 0 48 48" style="width: 32px; height: 32px;">
+                        <path fill="#00c300" d="M12.5,42h23c3.59,0,6.5-2.91,6.5-6.5v-23C42,8.91,39.09,6,35.5,6h-23C8.91,6,6,8.91,6,12.5v23C6,39.09,8.91,42,12.5,42z"></path>
+                        <path fill="#fff" d="M37.113,22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108,4.772-13.108,10.637c0,5.258,4.663,9.662,10.962,10.495c0.427,0.092,1.008,0.282,1.155,0.646c0.132,0.331,0.086,0.85,0.042,1.185c0,0-0.153,0.925-0.187,1.122c-0.057,0.331-0.263,1.296,1.135,0.707c1.399-0.589,7.548-4.445,10.298-7.611h-0.001C36.203,26.879,37.113,24.764,37.113,22.417z M18.875,25.907h-2.604c-0.379,0-0.687-0.308-0.687-0.688V20.01c0-0.379,0.308-0.687,0.687-0.687c0.379,0,0.687,0.308,0.687,0.687v4.521h1.917c0.379,0,0.687,0.308,0.687,0.687C19.562,25.598,19.254,25.907,18.875,25.907z M21.568,25.219c0,0.379-0.308,0.688-0.687,0.688s-0.687-0.308-0.687-0.688V20.01c0-0.379,0.308-0.687,0.687-0.687s0.687,0.308,0.687,0.687V25.219z M27.838,25.219c0,0.297-0.188,0.559-0.47,0.652c-0.071,0.024-0.145,0.036-0.218,0.036c-0.215,0-0.42-0.103-0.549-0.275l-2.669-3.635v3.222c0,0.379-0.308,0.688-0.688,0.688c-0.379,0-0.688-0.308-0.688-0.688V20.01c0-0.296,0.189-0.558,0.47-0.652c0.071-0.024,0.144-0.035,0.218-0.035c0.214,0,0.42,0.103,0.549,0.275l2.67,3.635V20.01c0-0.379,0.309-0.687,0.688-0.687c0.379,0,0.687,0.308,0.687,0.687V25.219z M32.052,21.927c0.379,0,0.688,0.308,0.688,0.688c0,0.379-0.308,0.687-0.688,0.687h-1.917v1.23h1.917c0.379,0,0.688,0.308,0.688,0.687c0,0.379-0.309,0.688-0.688,0.688h-2.604c-0.378,0-0.687-0.308-0.687-0.688v-2.603c0-0.001,0-0.001,0-0.001c0,0,0-0.001,0-0.001v-2.601c0-0.001,0-0.001,0-0.002c0-0.379,0.308-0.687,0.687-0.687h2.604c0.379,0,0.688,0.308,0.688,0.687s-0.308,0.687-0.688,0.687h-1.917v1.23H32.052z"></path>
+                    </svg>
+                `;
+                
+                button.addEventListener('click', () => {
+                    alert('內聯按鈕被點擊！\n這個按鈕是靜態顯示在頁面中的。');
+                });
+                
+                container.appendChild(button);
+                inlineTarget.appendChild(container);
+            }
+        }, 200);
+    </script>
+</body>
+</html>

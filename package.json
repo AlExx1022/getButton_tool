@@ -1,0 +1,17 @@
+{
+  "name": "getbutton",
+  "version": "1.0.0",
+  "description": "A lightweight Line QR code button widget that can be embedded in any website",
+  "main": "dist/getButton.min.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --dev",
+    "test": "open examples/basic.html"
+  },
+  "keywords": ["line", "qrcode", "widget", "button", "social"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "terser": "^5.19.0"
+  }
+}

@@ -34,7 +34,7 @@
     </script>
   
     <!-- 2. 引入腳本 -->
-    <script src="https://your-server.com/path/to/getButton.js"></script>
+   [ <script src="https://your-server.com/path/to/getButton.js"></script>](https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js)
 </body>
 </html>
 ```
@@ -59,7 +59,7 @@
         }
     ];
 </script>
-<script src="https://your-server.com/path/to/getButton.js"></script>
+[<script src="https://your-server.com/path/to/getButton.js"></script>](https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js)
 ```
 
 ## ⚙️ 配置選項
@@ -145,60 +145,6 @@ window.getButtonConfig = {
     qrCodeImage: './assets/line-qr.png',
     lineUrl: 'https://lin.ee/your-line-id'
 };
-```
-
-## 🔧 部署方式
-
-### 方法一：內部檔案伺服器
-
-1. 將 `src/core/getButton.js` 上傳到你的伺服器
-2. 在 HTML 中引用：
-
-```html
-<script src="https://your-domain.com/js/getButton.js"></script>
-```
-
-### 方法二：Gitea + Raw 檔案
-
-1. 上傳到內部 Gitea
-2. 使用 raw 檔案連結：
-
-```html
-<script src="https://gitea.company.com/frontend/getButton/raw/branch/main/src/core/getButton.js"></script>
-```
-
-### 方法三：CDN 部署
-
-1. 上傳到 GitHub
-2. 使用 jsDelivr CDN：
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/username/getButton@main/src/core/getButton.js"></script>
-```
-
-## 🛡️ 安全性
-
-- ✅ 使用 IIFE 避免全域污染
-- ✅ 純前端組件，無資料收集
-- ✅ 不發送網路請求（除使用者設定的連結）
-- ✅ 適合內部網路部署
-
-## 📂 檔案結構
-
-```
-getButton/
-├── src/
-│   ├── core/
-│   │   └── getButton.js          # 主要組件檔案
-│   └── assets/
-│       └── line-qr.svg           # 預設 QR Code 圖片
-├── examples/
-│   ├── simple-demo.html          # 單按鈕範例
-│   ├── multi-demo.html           # 多按鈕範例
-│   └── phone-demo.html           # 電話按鈕範例
-├── package.json
-├── build.js                      # 打包腳本
-└── README.md
 ```
 
 ## 🎨 客製化

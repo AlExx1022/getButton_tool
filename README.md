@@ -34,7 +34,7 @@
 </head>
 <body>
     <!-- 你的網站內容 -->
-    
+  
     <!-- 1. 自訂配置（可選） -->
     <script>
         window.getButtonConfig = {
@@ -43,7 +43,7 @@
             buttonColor: '#00c300'
         };
     </script>
-    
+  
     <!-- 2. 引入 getButton -->
     <script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
 </body>
@@ -162,16 +162,19 @@ window.getButtonConfig = {
 ## 🔗 CDN 網址說明
 
 ### 主要網址（推薦）
+
 ```html
 <script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/src/core/getButton.js"></script>
 ```
 
 ### 壓縮版本（更快載入）
+
 ```html
 <script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@main/dist/getButton.min.js"></script>
 ```
 
 ### 指定版本（穩定性）
+
 ```html
 <script src="https://cdn.jsdelivr.net/gh/AlExx1022/getButton_tool@v1.0.0/src/core/getButton.js"></script>
 ```
@@ -179,18 +182,22 @@ window.getButtonConfig = {
 ## 💡 使用技巧
 
 ### 1. 按鈕會自動出現在右下角
+
 - 不需要額外的 HTML 元素
 - 自動適應手機和桌面版
 
 ### 2. 多按鈕會垂直排列
+
 - 第一個按鈕在最下方
 - 第二個按鈕在上方，以此類推
 
 ### 3. QR Code 彈窗
+
 - 點擊 Line 按鈕會在按鈕上方顯示 QR Code
 - 點擊外部或按 ESC 鍵可關閉
 
 ### 4. 電話撥號
+
 - 點擊電話按鈕會直接撥號
 - 支援手機和桌面版瀏覽器
 
@@ -205,7 +212,3 @@ window.getButtonConfig = {
 
 - 📁 [GitHub 儲存庫](https://github.com/AlExx1022/getButton_tool)
 - 📖 [如何產生官方QRcode](https://creer-design.com/blogView.php?id=11)
-
-## 📄 授權
-
-MIT License - 可自由使用於商業和個人專案
